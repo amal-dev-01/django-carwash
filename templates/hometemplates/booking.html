@@ -1,0 +1,239 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>home</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+        <style>
+      
+          .centered-card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          
+            min-height: 100vh;
+        }
+
+        /* Add additional styling for the card if needed */
+        .plan {
+            border-radius: 16px;
+            box-shadow: 0 30px 30px -25px rgba(0, 38, 255, 0.205);
+            padding: 10px;
+            background-color: #fff;
+            color: #697e91;
+            width:400px;
+            height:600px;
+
+         
+        }
+          
+          .plan strong {
+            font-weight: 600;
+            color: #425275;
+          }
+          
+          .plan .inner {
+            align-items: center;
+            padding: 20px;
+            padding-top: 40px;
+            background-color: #ecf0ff;
+            border-radius: 12px;
+            position: relative;
+          }
+          
+          .plan .pricing {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #bed6fb;
+            border-radius: 99em 0 0 99em;
+            display: flex;
+            align-items: center;
+            padding: 0.625em 0.75em;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #425475;
+          }
+          
+          .plan .pricing small {
+            color: #707a91;
+            font-size: 0.75em;
+            margin-left: 0.25em;
+          }
+          
+          .plan .title {
+            font-weight: 600;
+            font-size: 1.25rem;
+            color: #425675;
+          }
+          
+          .plan .title + * {
+            margin-top: 0.75rem;
+          }
+          
+          .plan .info + * {
+            margin-top: 1rem;
+          }
+          
+          .plan .features {
+            display: flex;
+            flex-direction: column;
+          }
+          
+          .plan .features li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+          }
+          
+          .plan .features li + * {
+            margin-top: 0.75rem;
+          }
+          
+          .plan .features .icon {
+            background-color: #1FCAC5;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+          }
+          
+          .plan .features .icon svg {
+            width: 14px;
+            height: 14px;
+          }
+          
+          .plan .features + * {
+            margin-top: 1.25rem;
+          }
+          
+          .plan .action {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+          }
+          
+          .plan .button {
+            background-color: #6558d3;
+            border-radius: 6px;
+            color: #fff;
+            font-weight: 500;
+            font-size: 1.125rem;
+            text-align: center;
+            border: 0;
+            outline: 0;
+            width: 100%;
+            padding: 0.625em 0.75em;
+            text-decoration: none;
+          }
+          
+          .plan .button:hover, .plan .button:focus {
+            background-color: #4133B7;
+          }
+     
+        </style>
+    </head>
+    <body>
+      <div class="centered-card">
+  <div class="plan">
+		<div class="inner">
+			<span class="pricing">
+				<span>
+					{% comment %} $49 <small>/ m</small> {% endcomment %}
+				</span>
+			</span>
+			<p class="title">Selected Details</p>
+			{% comment %} <p class="info"></p> {% endcomment %}
+			<ul class="features">
+				<li>
+					<span class="icon">
+						<svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<path d="M0 0h24v24H0z" fill="none"></path>
+							<path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+						</svg>
+					</span>
+					<span><strong>Name: {{first_name}} {{last_name}}</strong> </span>
+				</li>
+				<li>
+					<span class="icon">
+						<svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<path d="M0 0h24v24H0z" fill="none"></path>
+							<path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+						</svg>
+					</span>
+					<span><strong>Package: {{package}}</strong></span>
+				</li>
+        <li>
+					<span class="icon">
+						<svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<path d="M0 0h24v24H0z" fill="none"></path>
+							<path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+						</svg>
+					</span>
+					<span><strong>Vechile Type: {{vechile_type}}</strong></span>
+				</li>
+        <li>
+					<span class="icon">
+						<svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<path d="M0 0h24v24H0z" fill="none"></path>
+							<path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+						</svg>
+					</span>
+					<span><strong> Date: {{date}}</strong></span>
+				</li>
+				<li>
+					<span class="icon">
+						<svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<path d="M0 0h24v24H0z" fill="none"></path>
+							<path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+						</svg>
+					</span>
+					<span><strong> Time: {{time}}</strong></span>
+				</li>
+        <li>
+					<span class="icon">
+						<svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<path d="M0 0h24v24H0z" fill="none"></path>
+							<path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+						</svg>
+					</span>
+					<span><strong> Price: {{price}}</strong></span>
+				</li>
+			</ul>
+			<div class="action">
+			<a class="button"  href="{% url 'payment' id %}">
+				Make payment
+			</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="path/to/bootstrap.js"></script>
+
+    </body>
+</html>
+
+
+
+
+
+

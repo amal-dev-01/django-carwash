@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vehicle Information</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        /* Add CSS for basic alignment */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Make the body take the full viewport height */
+        }
+
+        .outer-card {
+            display: flex;
+            flex-direction: row;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 1000px; /* Increase the card width */
+            height: 400px; /* Increase the card height */
+            overflow: hidden; /* Ensure inner content doesn't overflow */
+        }
+
+        .left-side {
+            flex: 1; /* Take up half of the outer card width */
+            overflow: hidden; /* Hide any overflow from the image */
+        }
+
+        .right-side {
+            flex: 1; /* Take up half of the outer card width */
+            padding: 20px; /* Add some padding for spacing */
+        }
+
+        
+
+        /* Style for the image */
+        .car-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cover the container while maintaining aspect ratio */
+        }
+        .card {
+            
+            border:none;
+            padding: 20px;
+            margin: 20px;
+            max-width: 400px;
+        }
+    
+        /* Style the heading */
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+    
+        /* Style the form */
+        form {
+            margin-bottom: 20px;
+        }
+    
+    
+    
+        /* Style the card within the card */
+        .card .card {
+           
+            box-shadow: none;
+            padding: 10px;
+            margin-top: 10px;
+        }
+    
+        /* Style the links */
+        .custom-link {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            font-size:22px;
+        }
+    
+        /* Style the links on hover */
+        .custom-link:hover {
+            text-decoration: none;
+        }
+
+     
+    </style>
+</head>
+<body>
+    <div class="outer-card">
+        <!-- Left side with the image -->
+        <div class="left-side">
+            <img src="https://images.unsplash.com/photo-1575844611398-2a68400b437c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" class="car-image" alt="Car Wash">
+        </div>
+
+        <!-- Right side with the inner card -->
+        <div class="right-side">
+            <div class="card">
+                <h1>Vehicle Information</h1>
+                <form method="get">
+                    {{ form.as_p }}
+                </form>
+                <div class="card">
+                    {% for package in packages %}
+                    <div>
+                        <a href="{% url 'select' package.id %}" class="custom-link">{{ package.package }}</a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
